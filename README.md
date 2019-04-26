@@ -11,6 +11,7 @@ Collection of fun side projects.
 
 Examples:
 
+* "In truth, man doesn't suffice"
 * "You can not see your soul burned in your hand"
 * "You will not live in what one draws"
 * "The most intelligent men are still very interesting and serious" 
