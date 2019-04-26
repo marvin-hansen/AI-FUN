@@ -12,7 +12,6 @@ Collection of fun side projects.
 Examples:
 
 * "You can not see your soul burned in your hand"
-* "How could anything originate out of its opposite?"
 * "You will not live in what one draws"
 * "The most intelligent men are still very interesting and serious" 
 * "A man growing tired of loneliness and of youth appears to enjoy happiness."
