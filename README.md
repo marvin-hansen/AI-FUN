@@ -1,13 +1,11 @@
 # AI-FUN
 Everything fun with Artificial Inteligence 
 
-Collection of fun side projects. 
-
 ## Socrates.ai 
 
 * Leverages text transfer learning 
 * Trains in under 3 minutes on a Tesla T4 GPU 
-* Generetes deep and meaningful philopspical thoughts you can't resists  
+* Generetes deep and meaningful philosophical thoughts you can't resists  
 
 Examples:
 
