@@ -1,5 +1,5 @@
 # AI-FUN
-Everything fun with AI &amp; MO
+Everything fun with Artificial Inteligence 
 
 Collection of fun side projects. 
 
