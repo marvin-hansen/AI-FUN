@@ -15,6 +15,9 @@ Examples:
 * "the power of a society is determined by the number of new paths you must learn"
 * "When you are deciding to commit suicide and of whether you want to be a philosopher or thinker, you must wish to be a philosopher" (Says the philosopher...)
 
+Socrates.ai on twiter: 
+
+https://twitter.com/socrates_ml
 
 
 
