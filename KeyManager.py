@@ -11,7 +11,7 @@ class KEYS(Enum):
 
 
 
-DBG = False
+DBG = True
 twt_key_file = "twitter.key"
 
 
@@ -59,4 +59,5 @@ def load_key(k_file: str = None, k_folder: str = "keys"):
                 api_secret_key = config['TWITTER']['API_SECRET_KEY']
                 access_token_key = config['TWITTER']['ACCESS_TOKEN']
                 access_token_secret = config['TWITTER']['ACCESS_TOKEN_SECRET']
+
             return api_key, api_secret_key, access_token_key, access_token_secret
