@@ -43,32 +43,3 @@ def test_log_tweets():
     log_tweets(log_file, line)
     assert os.path.isfile(file_name)
     os.remove(log_file)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

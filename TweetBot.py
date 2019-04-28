@@ -12,12 +12,16 @@ done = False
 
 DBG = True
 
-def authenticate_api():
+
+def capital_case(x):
+    return x.capitalize()
+
+
+def authenticate_api(consumer_key, consumer_secret, access_token, access_secret):
     """
     Authenticates against the official Twitter API and returns and api object 
     :return: api object
     """
-    consumer_key, consumer_secret, access_token, access_secret = k.set_key(k.KEYS.TWITTER)
     print('Connecting to Twitter...')
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_secret)
@@ -77,7 +81,7 @@ def log_tweets(file_name, line):
 
     exists: bool = os.path.isfile(file_name)
     if not exists:
-        create_tweet_log(file_lines)
+        create_tweet_log(file_name)
 
     my_file = open(file_name,"a+")
     # create timestamp
@@ -87,29 +91,34 @@ def log_tweets(file_name, line):
     my_file.close()
 
 
+def tweet(api, file_name, log_file, line):
+    if DBG: print("Tweeting: " + line)
+    api.update_status(line + author_name)
+    if DBG: print("updating text")
+    update_text(file_name, line)
+    if DBG: print("Logging tweet")
+    log_tweets(log_file, line)
+
+
 if __name__ == '__main__':
 
-    sleep_time_sec = 100
+    # authenticate api
+    consumer_key, consumer_secret, access_token, access_secret = k.set_key(k.KEYS.TWITTER)
+    api = authenticate_api(consumer_key, consumer_secret, access_token, access_secret)
+
     hashtags =""
-    author_name = " - Socrates.ai"
     file_name = "socrates-ai.txt"
+    author_name = " - Socrates.ai"
     log_file = "already_tweeted.txt"
+    sleep_time_sec = 900
 
     file_lines = read_text(file_name)
-
-    api = authenticate_api()
 
     for line in file_lines:
         # Add try ... except block to catch and output errors
         try:
             if line != '\n':
-                if DBG: print("Tweeting: " + line)
-                api.update_status(line+author_name)
-                if DBG: print("updating text")
-                update_text(file_name, line)
-                if DBG: print("Logging tweet")
-                log_tweets(log_file, line)
-
+                tweet(api, file_name, log_file, line)
                 sleep(sleep_time_sec)
             else:
                 pass
