@@ -6,6 +6,13 @@ __pycache__/
 # C extensions
 *.so
 
+#customs
+keys/*
+*.key
+keys/*.key
+.idea/*
+
+
 # Distribution / packaging
 .Python
 build/
