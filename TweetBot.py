@@ -2,13 +2,10 @@ import os
 
 import tweepy
 from time import sleep
-import threading
-import time
-import sys
+from datetime import datetime
 
 import KeyManager as k
 
-from tweepy.error import TweepError
 
 WAIT_TIME = 20
 done = False
@@ -16,7 +13,10 @@ done = False
 DBG = True
 
 def authenticate_api():
-
+    """
+    Authenticates against the official Twitter API and returns and api object 
+    :return: api object
+    """
     consumer_key, consumer_secret, access_token, access_secret = k.set_key(k.KEYS.TWITTER)
     print('Connecting to Twitter...')
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
@@ -27,6 +27,11 @@ def authenticate_api():
 
 
 def read_text(file_name):
+    """
+    Reads tweets from a text file
+    :param file_name: 
+    :return: content of text file, line by line
+    """
     my_file = open(file_name, 'r')
 
     file_lines = my_file.readlines()
@@ -36,6 +41,12 @@ def read_text(file_name):
 
 
 def update_text(file_name, line):
+    """
+    Removes a tweet from text file to prevent double posting
+    :param file_name:
+    :param line:
+    :return: void
+    """
     with open(file_name, "r+") as f:
         d = f.readlines()
         f.seek(0)
@@ -46,21 +57,33 @@ def update_text(file_name, line):
 
 
 def create_tweet_log(file_name):
-     my_file = open(file_name, "w+")
-     my_file.write("Tweet Log %d" "\r\n")
-     my_file.close()
+    """
+    Creates tweet log file to store posts already tweeted.
+    :param file_name:
+    :return: void
+    """
+    my_file = open(file_name, "w+")
+    my_file.write("Tweet Log %d" "\r\n")
+    my_file.close()
 
 
 def log_tweets(file_name, line):
+    """
+    Logs tweets in a text file with timestamp
+    :param file_name:
+    :param line:
+    :return: void
+    """
 
     exists: bool = os.path.isfile(file_name)
     if not exists:
         create_tweet_log(file_lines)
 
-
     my_file = open(file_name,"a+")
-    # append tweet
-    my_file.write(line + "\r\n")
+    # create timestamp
+    timestamp = datetime.timestamp(datetime.now())
+    # append tweet with time stamp
+    my_file.write(str(timestamp) + ":" + line + "\r\n")
     my_file.close()
 
 
