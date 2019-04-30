@@ -21,7 +21,8 @@ Examples:
    If one were religious, one could say that god really really does play dice
    
 More [Examples in this file](https://github.com/marvin-hansen/AI-FUN/blob/master/socrates-ai.txt)
-Socrates.ai on twiter: 
+
+Follow Socrates.ai on twiter: 
 
 https://twitter.com/socrates_ml
 
