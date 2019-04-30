@@ -19,6 +19,8 @@ Examples:
 * "The paradox of infinite sexuality is that the players do not regard the body as having a soul"
 * "2 and 2 are the product of quantum fluctuations in the very early universe . 
    If one were religious, one could say that god really really does play dice
+   
+More (Examples in this file)[https://github.com/marvin-hansen/AI-FUN/blob/master/socrates-ai.txt]
 
 Socrates.ai on twiter: 
 
