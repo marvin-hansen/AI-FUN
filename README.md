@@ -9,7 +9,7 @@ Everything fun with Artificial Inteligence
 
 Examples:
 
-* "The great delusion of modernity roots in discarding the laws of nature" 
+* "The great delusion of modernity roots in the discard of the laws of nature" 
 * "All great spirits are thought to be infinite."
 * "You can not see your soul burned in your hand"
 * "You will not live in what one draws"
